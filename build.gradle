@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
+}
+
+group 'org.volt4.parsey'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+}
+
+javafx {
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
