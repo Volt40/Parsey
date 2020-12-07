@@ -2,8 +2,7 @@ package org.volt4.parsey.node.logic;
 
 /**
  * Thrown if something goes wrong when calculating the node network.
- * 
- * @author Michael Baljet
+ *
  * @version 1.0
  *
  */

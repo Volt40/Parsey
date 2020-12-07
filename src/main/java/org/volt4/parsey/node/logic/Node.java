@@ -5,8 +5,7 @@ import java.util.List;
 
 /**
  * Represents a node in the network. All nodes extends this.
- * 
- * @author Michael Baljet
+ *
  * @version 1.0
  */
 public abstract class Node {

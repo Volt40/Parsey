@@ -4,8 +4,7 @@ import java.util.function.Supplier;
 
 /**
  * The input of a node, the input is of type T.
- * 
- * @author Michael Baljet
+ *
  * @version 1.0
  * @param <T> The type of the input.
  */

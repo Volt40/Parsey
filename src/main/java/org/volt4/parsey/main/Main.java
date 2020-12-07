@@ -3,7 +3,6 @@ package org.volt4.parsey.main;
 /**
  * Main class.
  *
- * @author Michael Baljet
  * @version 1.0
  *
  */

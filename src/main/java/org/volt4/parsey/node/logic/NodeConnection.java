@@ -2,8 +2,7 @@ package org.volt4.parsey.node.logic;
 
 /**
  * Represents a connection between the input and output of two node.
- * 
- * @author Michael Baljet
+ *
  * @version 1.0
  * @param <I, O> Data type this connection works with.
  */

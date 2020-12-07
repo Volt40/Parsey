@@ -5,8 +5,7 @@ import java.util.List;
 
 /**
  * The output of a node, the output is of type T.
- * 
- * @author Michael Baljet
+ *
  * @version 1.0
  * @param <T> The type of the output.
  */

@@ -5,8 +5,7 @@ import java.util.List;
 
 /**
  * Represents a network of nodes.
- * 
- * @author Michael Baljet
+ *
  * @version 1.0
  *
  */
