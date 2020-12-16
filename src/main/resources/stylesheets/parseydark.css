@@ -1,0 +1,106 @@
+/* Cascading style sheet for Parsey's dark theme. This theme is the default.
+ * Each component is outlined with a header that is the components name, and a
+ * footer, which designates the end of the component. All style classes are
+ * prefixed with the name of the component to prevent intersections. All
+ * of the main colors used in this style are also defined at the top of the
+ * file for easy management.
+*/
+
+*{
+    /* Button Colors */
+    -button-background: #595959;
+    -button-hover: #666666;
+    -button-pressed: #7d7d7d;
+
+    /* Dark color set */
+    -dark-a: #2c2c2c;
+    -dark-b: #3f3f3f;
+
+    /* Text Colors */
+    -text-highlight: #242424;
+    -text-color: white;
+}
+
+/* ValueSlider */
+.valueslider-text {
+	-fx-effect: dropshadow(gaussian, #3f3f3f, 0.1, 1, 1, 1);
+}
+.valueslider-back-drop {
+	-fx-background-color: -button-background;
+	-fx-background-radius: 6;
+	-fx-border-radius: 6;
+}
+.valueslider-right-arrow {
+	-fx-background-color: -button-background;
+	-fx-background-radius: 0 6 6 0;
+	-fx-border-radius: 0 6 6 0;
+}
+.valueslider-right-arrow:hover {
+	-fx-background-color: -button-hover;
+}
+.valueslider-right-arrow:pressed {
+	-fx-background-color: -button-pressed;
+}
+.valueslider-left-arrow {
+	-fx-background-color: -button-background;
+	-fx-background-radius: 6 0 0 6;
+	-fx-border-radius: 6 0 0 6;
+}
+.valueslider-left-arrow:hover {
+	-fx-background-color: -button-hover;
+}
+.valueslider-left-arrow:pressed {
+	-fx-background-color: -button-pressed;
+}
+.valueslider-center {
+	-fx-background-color: -button-background;
+}
+.valueslider-center:hover {
+	-fx-background-color: -button-hover;
+	-fx-cursor: e-resize;
+}
+.valueslider-center:pressed {
+	-fx-background-color: -button-pressed;
+}
+.valueslider-value-text-field {
+	-fx-background-color: -button-background;
+	-fx-text-fill: -text-color;
+	-fx-highlight-fill: -text-highlight;
+	-fx-background-radius: 6;
+	-fx-border-radius: 6;
+}
+/* End ValueSlider */
+
+/* DropDown */
+.combo-box {
+    -fx-background-color: -dark-a;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-text-fill: -text-color;
+}
+.combo-box .arrow {
+    -fx-background-color: -button-background;
+}
+.combo-box .list-cell {
+	-fx-text-fill: -text-color;
+	-fx-font-size: 14px;
+}
+.combo-box-popup .list-view {
+	-fx-background-color: -dark-a;
+	-fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-width: 0;
+}
+.combo-box-popup .list-view .list-cell {
+    -fx-background-color: -dark-a;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-width: 0;
+    -fx-text-fill: -text-color;
+}
+.combo-box-popup .list-view .list-cell:filled:hover {
+    -fx-background-color: -dark-b;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+/* End DropDown */

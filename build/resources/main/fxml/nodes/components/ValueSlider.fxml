@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<fx:root fx:id="centerPane" onMouseEntered="#mouseEnter" onMouseExited="#mouseExit" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #595959; -fx-background-radius: 6; -fx-border-radius: 6;" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root onMouseEntered="#mouseEnter" onMouseExited="#mouseExit" prefHeight="30.0" prefWidth="200.0" styleClass="valueslider-back-drop" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text fill="WHITE" layoutX="8.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-effect: dropshadow(gaussian, #3f3f3f, 0.1, 1, 1, 1);" text="Value" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="5.5">
-         <font>
-            <Font name="SansSerif Regular" size="17.0" />
-         </font>
-      </Text>
-      <AnchorPane fx:id="raft" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #595959; -fx-background-radius: 6; -fx-border-radius: 6;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="rightPane" onMouseReleased="#rightArrowMouseRelease" prefHeight="30.0" prefWidth="18.0" styleClass="valueslider-right-arrow" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Text fx:id="valueText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-effect: dropshadow(gaussian, #3f3f3f, 0.1, 1, 1, 1);" text="0.500" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.5">
-               <font>
-                  <Font name="SansSerif Regular" size="17.0" />
-               </font>
-            </Text>
-            <AnchorPane fx:id="rightPane" onMouseEntered="#rightArrowMouseEnter" onMousePressed="#rightArrowMousePress" onMouseReleased="#rightArrowMouseRelease" prefHeight="30.0" prefWidth="18.0" style="-fx-background-color: #666666; -fx-background-radius: 0 6 6 0; -fx-border-radius: 0 6 6 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <Text fill="WHITE" layoutX="5.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-effect: dropshadow(gaussian, #3f3f3f, 0.1, 1, 1, 1);" text="&gt;" AnchorPane.rightAnchor="4.5" AnchorPane.topAnchor="6.0">
-                     <font>
-                        <Font name="SansSerif Bold" size="15.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="leftPane" onMouseEntered="#leftArrowMouseEnter" onMousePressed="#leftArrowMousePress" onMouseReleased="#leftArrowMouseRelease" prefHeight="30.0" prefWidth="18.0" style="-fx-background-color: #666666; -fx-background-radius: 6 0 0 6; -fx-border-radius: 6 0 0 6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Text fill="WHITE" layoutX="5.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-effect: dropshadow(gaussian, #3f3f3f, 0.1, 1, 1, 1);" text="&lt;" AnchorPane.leftAnchor="4.5" AnchorPane.topAnchor="6.0">
+            <Text fill="WHITE" layoutX="5.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="valueslider-text" text="&gt;" AnchorPane.rightAnchor="4.5" AnchorPane.topAnchor="6.0">
                <font>
                   <Font name="SansSerif Bold" size="15.0" />
                </font>
             </Text>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="-31.0" layoutY="-81.0" onDragDetected="#centerDragDetected" onMouseDragged="#centerMouseDragged" onMouseEntered="#centerMouseEntered" onMouseExited="#centerMouseExit" onMousePressed="#centerMouseRelease" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane layoutX="-31.0" layoutY="-81.0" onDragDetected="#centerDragDetected" onMouseClicked="#centerClick" onMouseDragged="#centerMouseDragged" onMousePressed="#centerMouseRelease" prefHeight="200.0" prefWidth="200.0" styleClass="valueslider-center" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text fx:id="labelText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="valueslider-text" text="Value" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="5.5">
+               <font>
+                  <Font name="SansSerif Regular" size="17.0" />
+               </font>
+            </Text>
+            <Text fx:id="valueText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="valueslider-text" text="0.500" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="5.5">
+               <font>
+                  <Font name="SansSerif Regular" size="17.0" />
+               </font>
+            </Text>
+         </children></AnchorPane>
+      <AnchorPane fx:id="leftPane" onMouseReleased="#leftArrowMouseRelease" prefHeight="30.0" prefWidth="18.0" styleClass="valueslider-left-arrow" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text fill="WHITE" layoutX="5.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="valueslider-text" text="&lt;" AnchorPane.leftAnchor="4.5" AnchorPane.topAnchor="6.0">
+               <font>
+                  <Font name="SansSerif Bold" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="textField" onAction="#onEnter" layoutX="53.0" layoutY="21.0" styleClass="valueslider-value-text-field" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
    </children>
 </fx:root>

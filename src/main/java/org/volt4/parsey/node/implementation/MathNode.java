@@ -3,10 +3,10 @@ package org.volt4.parsey.node.implementation;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.volt4.parsey.node.logic.Node;
-import org.volt4.parsey.node.logic.NodeException;
-import org.volt4.parsey.node.logic.NodeInput;
-import org.volt4.parsey.node.logic.NodeOutput;
+import org.volt4.parsey.node.Node;
+import org.volt4.parsey.node.NodeException;
+import org.volt4.parsey.node.NodeInput;
+import org.volt4.parsey.node.NodeOutput;
 
 /**
  * A simple math node. Performs most normal operations between two inputs.
@@ -24,15 +24,15 @@ public class MathNode extends Node {
 	/*
 	 * Inputs.
 	 */
-	public NodeInput<Float> value1;
-	public NodeInput<Float> value2;
-	public NodeInput<Float> base;
-	public NodeInput<Float> exponent;
+	public NodeInput<Double> value1;
+	public NodeInput<Double> value2;
+	public NodeInput<Double> base;
+	public NodeInput<Double> exponent;
 	
 	/*
 	 * Ouputs.
 	 */
-	public NodeOutput<Float> outputValue;
+	public NodeOutput<Double> outputValue;
 	
 	/**
 	 * Constructs a MathNode with the given type.
@@ -40,12 +40,12 @@ public class MathNode extends Node {
 	 */
 	public MathNode(Type type) {
 		// Add all inputs.
-		value1 = new NodeInput<Float>("Value");
-		value2 = new NodeInput<Float>("Value");
-		base = new NodeInput<Float>("Base");
-		exponent = new NodeInput<Float>("Exponent");
+		value1 = new NodeInput<Double>("Value");
+		value2 = new NodeInput<Double>("Value");
+		base = new NodeInput<Double>("Base");
+		exponent = new NodeInput<Double>("Exponent");
 		// Add all outputs.
-		outputValue = new NodeOutput<Float>("Value");
+		outputValue = new NodeOutput<Double>("Value");
 		// Set the type.
 		setType(type);
 	}
