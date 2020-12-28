@@ -19,6 +19,14 @@ public class NodeConnectionComponent<I, O> {
     // Node Connection
     private NodeConnection<I, O> connection;
 
+    /**
+     * Returns the NodeConnection of this object.
+     * @return the NodeConnection of this object.
+     */
+    public NodeConnection<I, O> getNodeConnection() {
+        return connection;
+    }
+
     public enum Type {
         LINE, CURVE;
     }

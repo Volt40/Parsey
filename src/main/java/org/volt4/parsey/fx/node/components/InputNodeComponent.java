@@ -38,6 +38,6 @@ public interface InputNodeComponent<T> extends NodeComponent {
      * Sets the input connection of this component. Used for reference.
      * @param input Input connection to be set.
      */
-    void setInput(NodeConnectionComponent<?, T> input);
+    void setInput(NodeConnectionComponent<T, ?> input);
 
 }

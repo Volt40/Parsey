@@ -22,12 +22,12 @@ public interface OutputNodeComponent<T> extends NodeComponent {
      * Adds the output to the node network.
      * @param connection Output to be added.
      */
-    void addOutput(NodeConnectionComponent<T, ?> connection);
+    void addOutput(NodeConnectionComponent<?, T> connection);
 
     /**
      * Removes the output from the node network.
      * @param connection Output to be removed.
      */
-    void removeOutput(NodeConnectionComponent<T, ?> connection);
+    void removeOutput(NodeConnectionComponent<?, T> connection);
 
 }
