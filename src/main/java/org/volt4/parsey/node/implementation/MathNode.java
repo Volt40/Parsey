@@ -20,18 +20,14 @@ public class MathNode extends Node {
 	 * Type of this MathNode.
 	 */
 	private Type type;
-	
-	/*
-	 * Inputs.
-	 */
+
+	// Inputs.
 	public NodeInput<Double> value1;
 	public NodeInput<Double> value2;
 	public NodeInput<Double> base;
 	public NodeInput<Double> exponent;
 	
-	/*
-	 * Ouputs.
-	 */
+	// Output.
 	public NodeOutput<Double> outputValue;
 	
 	/**
@@ -169,7 +165,7 @@ public class MathNode extends Node {
 		 * @param displayName Display name of the operation.
 		 * @param description Description of the operation.
 		 */
-		private Type(String displayName, String description) {
+		Type(String displayName, String description) {
 			this.displayName = displayName;
 			this.description = description;
 		}
@@ -192,7 +188,7 @@ public class MathNode extends Node {
 
 	@Override
 	public List<NodeInput<?>> inputs() {
-		List<NodeInput<?>> list = new ArrayList<NodeInput<?>>();
+		List<NodeInput<?>> list = new ArrayList<>();
 		list.add(value1);
 		list.add(value2);
 		list.add(base);
@@ -202,7 +198,7 @@ public class MathNode extends Node {
 
 	@Override
 	public List<NodeOutput<?>> outputs() {
-		List<NodeOutput<?>> list = new ArrayList<NodeOutput<?>>();
+		List<NodeOutput<?>> list = new ArrayList<>();
 		list.add(outputValue);
 		return list;
 	}

@@ -12,6 +12,7 @@ import java.io.IOException;
 /**
  * Basic label for the inputs and outputs of a node.
  */
+@Deprecated
 public class IOLabel extends AnchorPane implements Component {
 
     // Location of this component's FXML.

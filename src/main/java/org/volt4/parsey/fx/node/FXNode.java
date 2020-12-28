@@ -103,7 +103,7 @@ public abstract class FXNode extends AnchorPane {
         for (int i = 0; i < components.size(); i++) {
             Component component = components.get(i);
             if (!component.isComponentDisabled())
-                if (component.getRoot() == null && i != components.size() - 1 && !components.get(i + 1).isComponentDisabled())
+                if (component.getRoot() == null && i != 0 && !components.get(i - 1).isComponentDisabled())
                     currentPlace += component.getComponentHeight();
                 else if (component.getRoot() != null) {
                     AnchorPane.setTopAnchor(component.getRoot(), currentPlace);

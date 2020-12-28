@@ -25,8 +25,8 @@ public class NodeNetwork {
 	 * Constructs a node network.
 	 */
 	public NodeNetwork() {
-		nodes = new ArrayList<Node>();
-		connections = new ArrayList<NodeConnection<?, ?>>();
+		nodes = new ArrayList<>();
+		connections = new ArrayList<>();
 	}
 	
 	/**

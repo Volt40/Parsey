@@ -9,6 +9,7 @@ import org.volt4.parsey.node.NodeOutput;
  * @version 1.0
  *
  */
+@Deprecated
 public interface IOComponent<T> extends Component {
 
     /**

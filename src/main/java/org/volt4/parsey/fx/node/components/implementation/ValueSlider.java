@@ -29,6 +29,7 @@ import java.math.RoundingMode;
  * @version 1.0
  *
  */
+@Deprecated
 public class ValueSlider extends AnchorPane implements IOComponent<Double> {
 
     // Location of this component's FXML.

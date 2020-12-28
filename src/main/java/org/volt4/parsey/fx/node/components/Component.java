@@ -8,6 +8,7 @@ import javafx.scene.layout.Pane;
  * @version 1.0
  *
  */
+@Deprecated
 public interface Component {
 
     /**

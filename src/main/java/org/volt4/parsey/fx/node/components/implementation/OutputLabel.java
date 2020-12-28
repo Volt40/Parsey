@@ -4,6 +4,7 @@ import org.volt4.parsey.fx.node.components.IOComponent;
 import org.volt4.parsey.node.NodeInput;
 import org.volt4.parsey.node.NodeOutput;
 
+@Deprecated
 public class OutputLabel<T> extends IOLabel implements IOComponent<T> {
 
     private NodeOutput<T> linkedOutput;

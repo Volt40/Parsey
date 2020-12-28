@@ -4,7 +4,8 @@ package org.volt4.parsey.node;
  * Represents a connection between the input and output of two node.
  *
  * @version 1.0
- * @param <I, O> Data type this connection works with.
+ * @param <I> Input data type this connection works with.
+ * @param <O> Output data type this connection works with.
  */
 public class NodeConnection<I, O> {
 	
