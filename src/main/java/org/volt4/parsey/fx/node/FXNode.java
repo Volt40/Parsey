@@ -1,8 +1,13 @@
 package org.volt4.parsey.fx.node;
 
+import javafx.event.EventHandler;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import org.volt4.parsey.fx.node.components.Component;
 import org.volt4.parsey.fx.node.components.IOComponent;
@@ -49,6 +54,8 @@ public abstract class FXNode extends AnchorPane {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        // Set up
+        enableDrag(this);
     }
 
     /**
@@ -93,15 +100,17 @@ public abstract class FXNode extends AnchorPane {
      */
     public void recalculateSize() {
         double currentPlace = 30;
-        for (Component component : components)
+        for (int i = 0; i < components.size(); i++) {
+            Component component = components.get(i);
             if (!component.isComponentDisabled())
-                if (component.getRoot() == null)
+                if (component.getRoot() == null && i != components.size() - 1 && !components.get(i + 1).isComponentDisabled())
                     currentPlace += component.getComponentHeight();
-                else {
+                else if (component.getRoot() != null) {
                     AnchorPane.setTopAnchor(component.getRoot(), currentPlace);
                     currentPlace += component.getComponentHeight();
                 }
-        setPrefHeight(currentPlace + 10d);
+        }
+        setPrefHeight(currentPlace + 10);
     }
 
     /**
@@ -112,5 +121,26 @@ public abstract class FXNode extends AnchorPane {
         this.label.setText(label);
     }
 
+    /**
+     * Makes a node draggable.
+     * @param pane Pane to enable the drag.
+     */
+    public static void enableDrag(Pane pane) {
+        final double[] delta = new double[2];
+        pane.setOnMousePressed(mouseEvent -> {
+            // Record a delta distance for the drag operation.
+            delta[0] = mouseEvent.getX();
+            delta[1] = mouseEvent.getY();
+        });
+        pane.setOnMouseDragged(mouseEvent -> {
+            // Update the position.
+            pane.setLayoutX(pane.getLayoutX() + mouseEvent.getX() - delta[0]);
+            pane.setLayoutY(pane.getLayoutY() + mouseEvent.getY() - delta[1]);
+        });
+    }
+
+    public static void consumeDrag(Pane pane) {
+        pane.setOnMouseDragged(mouseEvent -> mouseEvent.consume());
+    }
 
 }

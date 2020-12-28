@@ -20,6 +20,11 @@
     -text-highlight: #242424;
     -text-color: white;
 }
+/* Editor */
+.editor-base {
+    -fx-background-color: linear-gradient(to bottom right, #252a35, #444d5c);
+}
+/* End Editor */
 
 /* ValueSlider */
 .valueslider-text {

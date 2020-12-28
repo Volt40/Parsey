@@ -1,4 +1,4 @@
-package org.volt4.parsey.fx.node.components;
+package org.volt4.parsey.fx.node.components.implementation;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -7,6 +7,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import org.volt4.parsey.fx.node.FXNode;
+import org.volt4.parsey.fx.node.components.Component;
 
 import java.io.IOException;
 
@@ -41,14 +43,16 @@ public class DropDown extends AnchorPane implements Component {
         // Setup
         ObservableList<String> options = FXCollections.observableArrayList(items);
         comboBox.setItems(options);
+        FXNode.consumeDrag(this);
     }
 
     public String getSelected() {
         return comboBox.getValue();
     }
 
-    public void setSelected(int i) {
+    public DropDown setSelected(int i) {
         comboBox.getSelectionModel().select(i);
+        return this;
     }
 
     public ComboBox<String> getEmbedded() {
@@ -72,6 +76,10 @@ public class DropDown extends AnchorPane implements Component {
 
     @Override
     public void setComponentDisabled(boolean disabled) {
+        if (disabled)
+            setVisible(false);
+        else
+            setVisible(true);
         this.disabled = disabled;
     }
 }

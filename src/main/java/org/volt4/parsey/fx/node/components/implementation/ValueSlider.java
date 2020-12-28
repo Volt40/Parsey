@@ -1,4 +1,4 @@
-package org.volt4.parsey.fx.node.components;
+package org.volt4.parsey.fx.node.components.implementation;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -8,6 +8,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
+import org.volt4.parsey.fx.node.FXNode;
+import org.volt4.parsey.fx.node.components.IOComponent;
+import org.volt4.parsey.node.NodeInput;
+import org.volt4.parsey.node.NodeOutput;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -103,6 +107,7 @@ public class ValueSlider extends AnchorPane implements IOComponent<Double> {
             e.printStackTrace();
         }
         // Set up.
+        FXNode.consumeDrag(this);
         labelText.setText(label);
         rightPane.setVisible(false);
         leftPane.setVisible(false);
@@ -188,6 +193,7 @@ public class ValueSlider extends AnchorPane implements IOComponent<Double> {
             return;
         textField.setText("" + value);
         textField.setVisible(true);
+        textField.requestFocus();
     }
 
     @FXML
@@ -257,7 +263,17 @@ public class ValueSlider extends AnchorPane implements IOComponent<Double> {
     }
 
     @Override
-    public void setInputed(boolean inputed) {
+    public NodeOutput<Double> getLinkedOutput() {
+        return null;
+    }
+
+    @Override
+    public NodeInput<Double> getLinkedInput() {
+        return null;
+    }
+
+    @Override
+    public void setInputted(boolean inputted) {
         // TODO
     }
 
@@ -268,6 +284,10 @@ public class ValueSlider extends AnchorPane implements IOComponent<Double> {
 
     @Override
     public void setComponentDisabled(boolean disabled) {
+        if (disabled)
+            setVisible(false);
+        else
+            setVisible(true);
         this.disabled = disabled;
     }
 

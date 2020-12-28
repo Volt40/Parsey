@@ -1,10 +1,11 @@
-package org.volt4.parsey.fx.node.components;
+package org.volt4.parsey.fx.node.components.implementation;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
+import org.volt4.parsey.fx.node.components.Component;
 
 import java.io.IOException;
 
@@ -92,6 +93,10 @@ public class IOLabel extends AnchorPane implements Component {
 
     @Override
     public void setComponentDisabled(boolean disabled) {
+        if (disabled)
+            setVisible(false);
+        else
+            setVisible(true);
         this.disabled = disabled;
     }
 

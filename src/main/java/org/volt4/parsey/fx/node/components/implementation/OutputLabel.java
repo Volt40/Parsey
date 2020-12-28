@@ -1,8 +1,12 @@
-package org.volt4.parsey.fx.node.components;
+package org.volt4.parsey.fx.node.components.implementation;
 
-import java.util.function.Supplier;
+import org.volt4.parsey.fx.node.components.IOComponent;
+import org.volt4.parsey.node.NodeInput;
+import org.volt4.parsey.node.NodeOutput;
 
 public class OutputLabel<T> extends IOLabel implements IOComponent<T> {
+
+    private NodeOutput<T> linkedOutput;
 
     /**
      * Constructs a OutputLabel with the given parameters.
@@ -11,6 +15,7 @@ public class OutputLabel<T> extends IOLabel implements IOComponent<T> {
      */
     public OutputLabel(String label, double height) {
         super(label, IOLabel.Type.OUTPUT, height);
+        linkedOutput = new NodeOutput<>(label);
     }
 
     @Override
@@ -29,7 +34,17 @@ public class OutputLabel<T> extends IOLabel implements IOComponent<T> {
     }
 
     @Override
-    public void setInputed(boolean inputed) {
+    public NodeOutput<T> getLinkedOutput() {
+        return linkedOutput;
+    }
+
+    @Override
+    public NodeInput<T> getLinkedInput() {
+        return null;
+    }
+
+    @Override
+    public void setInputted(boolean inputted) {
         // Unused
     }
 
