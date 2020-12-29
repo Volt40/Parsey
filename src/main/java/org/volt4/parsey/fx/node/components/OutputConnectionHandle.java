@@ -13,6 +13,9 @@ import java.util.List;
  */
 public class OutputConnectionHandle extends ConnectionHandle {
 
+    // Keeps track of all OutputConnectionHandles.
+    private static List<OutputConnectionHandle> allOutputConnectionHandles;
+
     // This output's connections.
     private List<NodeConnectionComponent<?, ?>> referencedConnections;
 
@@ -22,6 +25,9 @@ public class OutputConnectionHandle extends ConnectionHandle {
      */
     public OutputConnectionHandle(HandleColor color) {
         super(color);
+        if (allOutputConnectionHandles == null)
+            allOutputConnectionHandles = new ArrayList<>();
+        allOutputConnectionHandles.add(this);
         referencedConnections = new ArrayList<>();
     }
 

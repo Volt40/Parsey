@@ -2,6 +2,9 @@ package org.volt4.parsey.fx.node.components;
 
 import javafx.scene.input.MouseEvent;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Input connection handle.
  *
@@ -9,6 +12,9 @@ import javafx.scene.input.MouseEvent;
  *
  */
 public class InputConnectionHandle extends ConnectionHandle {
+
+    // Keeps track of all InputConnectionHandles.
+    private static List<InputConnectionHandle> allInputConnectionHandles;
 
     // This input's connection.
     private NodeConnectionComponent<?, ?> referencedConnection;
@@ -19,6 +25,9 @@ public class InputConnectionHandle extends ConnectionHandle {
      */
     public InputConnectionHandle(HandleColor color) {
         super(color);
+        if (allInputConnectionHandles == null)
+            allInputConnectionHandles = new ArrayList<>();
+        allInputConnectionHandles.add(this);
     }
 
     /**
