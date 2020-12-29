@@ -13,6 +13,9 @@ import org.volt4.parsey.node.NodeConnection;
  */
 public class NodeConnectionComponent<I, O> {
 
+    // The global interpolation type for all connection curves.
+    private static InterpolationType globalType;
+
     // Cubic curve object used to display the connection.
     private CubicCurve curve;
 
@@ -27,7 +30,10 @@ public class NodeConnectionComponent<I, O> {
         return connection;
     }
 
-    public enum Type {
+    /**
+     * The interpolation type of the curve.
+     */
+    public enum InterpolationType {
         LINE, CURVE;
     }
 

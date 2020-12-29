@@ -12,7 +12,7 @@
     -button-hover: #666666;
     -button-pressed: #7d7d7d;
 
-    /* Dark color set */
+    /* Dark Color Set */
     -dark-a: #2c2c2c;
     -dark-b: #3f3f3f;
     -dark-c: #1f1f1f;
@@ -20,12 +20,63 @@
     /* Text Colors */
     -text-highlight: #242424;
     -text-color: white;
+
+    /* Node Connection Colors */
+    -nc-grey-color: #A1A1A1;
+    -nc-yellow-color: #C7C727;
+    -nc-purple-color: #6461CD;
+    -nc-green-color: #7EC77C;
+    -curve-normal-color: #7D7D7D;
+    -curve-left-color: linear-gradient(to right, #e3e3e3, -curve-normal-color);
+    -curve-right-color: linear-gradient(to right, -curve-normal-color, #e3e3e3);
 }
 /* Editor */
 .editor-base {
     -fx-background-color: -dark-c;
 }
 /* End Editor */
+
+/* Node Connection Classes */
+.nc-grey {
+    -fx-background-color: -nc-grey-color;
+    -fx-border-color: black;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+.nc-yellow {
+    -fx-background-color: -nc-yellow-color;
+    -fx-border-color: black;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+.nc-purple {
+    -fx-background-color: -nc-purple-color;
+    -fx-border-color: black;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+.nc-green {
+    -fx-background-color: -nc-green-color;
+    -fx-border-color: black;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+.curve-normal {
+    -fx-fill: transparent;
+    -fx-stroke-width: 3;
+    -fx-stroke: -curve-normal-color;
+}
+.curve-left {
+    -fx-fill: transparent;
+    -fx-stroke-width: 3;
+    -fx-stroke: -curve-left-color;
+}
+.curve-right {
+    -fx-fill: transparent;
+    -fx-stroke-width: 3;
+    -fx-stroke: -curve-right-color;
+}
+/* End Node Connection Classes */
 
 /* ValueSlider */
 .valueslider-text {

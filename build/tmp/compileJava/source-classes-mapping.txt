@@ -1,45 +1,58 @@
-org/volt4/parsey/fx/node/components/IOComponent.java
- org.volt4.parsey.fx.node.components.IOComponent
- org.volt4.parsey.fx.node.components.IOComponent$Type
+org/volt4/parsey/node/NodeException.java
+ org.volt4.parsey.node.NodeException
+org/volt4/parsey/main/Settings.java
+ org.volt4.parsey.main.Settings
+org/volt4/parsey/fx/Editor.java
+ org.volt4.parsey.fx.Editor
+org/volt4/parsey/fx/node/components/NodeComponent.java
+ org.volt4.parsey.fx.node.components.NodeComponent
+org/volt4/parsey/fx/node/components/implementation/OutputLabel.java
+ org.volt4.parsey.fx.node.components.implementation.OutputLabel
 org/volt4/parsey/node/NodeInput.java
  org.volt4.parsey.node.NodeInput
 org/volt4/parsey/node/Node.java
  org.volt4.parsey.node.Node
-org/volt4/parsey/main/Settings.java
- org.volt4.parsey.main.Settings
-org/volt4/parsey/node/NodeException.java
- org.volt4.parsey.node.NodeException
+org/volt4/parsey/fx/node/components/NodeConnectionComponent.java
+ org.volt4.parsey.fx.node.components.NodeConnectionComponent
+ org.volt4.parsey.fx.node.components.NodeConnectionComponent$Type
+org/volt4/parsey/fx/node/components/InputNodeComponent.java
+ org.volt4.parsey.fx.node.components.InputNodeComponent
+org/volt4/parsey/main/Test.java
+ org.volt4.parsey.main.Test
+org/volt4/parsey/fx/node/components/implementation/NodeValueSlider.java
+ org.volt4.parsey.fx.node.components.implementation.NodeValueSlider
 org/volt4/parsey/node/NodeOutput.java
  org.volt4.parsey.node.NodeOutput
 org/volt4/parsey/node/NodeConnection.java
  org.volt4.parsey.node.NodeConnection
-org/volt4/parsey/main/Main.java
- org.volt4.parsey.main.Main
-org/volt4/parsey/main/Parsey.java
- org.volt4.parsey.main.Parsey
-org/volt4/parsey/fx/Editor.java
- org.volt4.parsey.fx.Editor
-org/volt4/parsey/node/NodeNetwork.java
- org.volt4.parsey.node.NodeNetwork
-org/volt4/parsey/node/implementation/MathNode.java
- org.volt4.parsey.node.implementation.MathNode
- org.volt4.parsey.node.implementation.MathNode$1
- org.volt4.parsey.node.implementation.MathNode$Type
-org/volt4/parsey/fx/node/components/Component.java
- org.volt4.parsey.fx.node.components.Component
- org.volt4.parsey.fx.node.components.Component$1
-org/volt4/parsey/fx/node/components/implementation/OutputLabel.java
- org.volt4.parsey.fx.node.components.implementation.OutputLabel
-org/volt4/parsey/fx/node/components/implementation/IOLabel.java
- org.volt4.parsey.fx.node.components.implementation.IOLabel
- org.volt4.parsey.fx.node.components.implementation.IOLabel$1
- org.volt4.parsey.fx.node.components.implementation.IOLabel$Type
 org/volt4/parsey/fx/node/components/implementation/ValueSlider.java
  org.volt4.parsey.fx.node.components.implementation.ValueSlider
 org/volt4/parsey/fx/node/FXNode.java
  org.volt4.parsey.fx.node.FXNode
 org/volt4/parsey/fx/node/components/implementation/DropDown.java
  org.volt4.parsey.fx.node.components.implementation.DropDown
+org/volt4/parsey/fx/node/components/OutputNodeComponent.java
+ org.volt4.parsey.fx.node.components.OutputNodeComponent
+org/volt4/parsey/node/NodeNetwork.java
+ org.volt4.parsey.node.NodeNetwork
+org/volt4/parsey/node/implementation/MathNode.java
+ org.volt4.parsey.node.implementation.MathNode
+ org.volt4.parsey.node.implementation.MathNode$1
+ org.volt4.parsey.node.implementation.MathNode$Type
+org/volt4/parsey/fx/node/components/IOComponent.java
+ org.volt4.parsey.fx.node.components.IOComponent
+ org.volt4.parsey.fx.node.components.IOComponent$Type
+org/volt4/parsey/fx/node/components/Component.java
+ org.volt4.parsey.fx.node.components.Component
+ org.volt4.parsey.fx.node.components.Component$1
+org/volt4/parsey/fx/node/components/implementation/IOLabel.java
+ org.volt4.parsey.fx.node.components.implementation.IOLabel
+ org.volt4.parsey.fx.node.components.implementation.IOLabel$1
+ org.volt4.parsey.fx.node.components.implementation.IOLabel$Type
 org/volt4/parsey/fx/node/FXMathNode.java
  org.volt4.parsey.fx.node.FXMathNode
  org.volt4.parsey.fx.node.FXMathNode$1
+org/volt4/parsey/main/Main.java
+ org.volt4.parsey.main.Main
+org/volt4/parsey/main/Parsey.java
+ org.volt4.parsey.main.Parsey
