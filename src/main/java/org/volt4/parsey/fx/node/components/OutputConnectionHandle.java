@@ -2,6 +2,9 @@ package org.volt4.parsey.fx.node.components;
 
 import javafx.scene.input.MouseEvent;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Output connection handle.
  *
@@ -10,12 +13,16 @@ import javafx.scene.input.MouseEvent;
  */
 public class OutputConnectionHandle extends ConnectionHandle {
 
+    // This output's connections.
+    private List<NodeConnectionComponent<?, ?>> referencedConnections;
+
     /**
      * Constructs a OutputConnectionHandle with the given color.
      * @param color Color of the OutputConnectionHandle.
      */
     public OutputConnectionHandle(HandleColor color) {
         super(color);
+        referencedConnections = new ArrayList<>();
     }
 
     /**

@@ -10,6 +10,9 @@ import javafx.scene.input.MouseEvent;
  */
 public class InputConnectionHandle extends ConnectionHandle {
 
+    // This input's connection.
+    private NodeConnectionComponent<?, ?> referencedConnection;
+
     /**
      * Constructs a InputConnectionHandle with the given color.
      * @param color Color of the InputConnectionHandle.
