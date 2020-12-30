@@ -18,7 +18,7 @@ public class NodeInput<T> {
 	/**
 	 * This inputs's connection.
 	 */
-	private NodeConnection<T, ?> connection;
+	private NodeConnection<?, ?> connection;
 	
 	/**
 	 * True if this input is connected, false otherwise.
@@ -134,7 +134,7 @@ public class NodeInput<T> {
 	 * Sets the connection.
 	 * @param connection Connection to be set.
 	 */
-	public void setConnection(NodeConnection<T, ?> connection) {
+	public void setConnection(NodeConnection<?, ?> connection) {
 		this.connection = connection;
 		connected = true;
 	}
@@ -151,7 +151,7 @@ public class NodeInput<T> {
 	 * Returns this input's connection (or null).
 	 * @return this input's connection (or null).
 	 */
-	public NodeConnection<T, ?> getConnection() {
+	public NodeConnection<?, ?> getConnection() {
 		return connection;
 	}
 	

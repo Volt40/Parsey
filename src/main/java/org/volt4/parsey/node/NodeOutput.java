@@ -19,7 +19,7 @@ public class NodeOutput<T> {
 	/**
 	 * The connections this output node uses.
 	 */
-	private List<NodeConnection<?, T>> connections;
+	private List<NodeConnection<?, ?>> connections;
 	
 	/**
 	 * Whether or not this node is connected.
@@ -41,7 +41,7 @@ public class NodeOutput<T> {
 	 * @param label This output's label.
 	 */
 	public NodeOutput(String label) {
-		connections = new ArrayList<NodeConnection<?, T>>();
+		connections = new ArrayList<>();
 		connected = false; // Starts unconnected.
 		this.label = label;
 	}
@@ -111,7 +111,7 @@ public class NodeOutput<T> {
 	 * Returns the connections of this output node.
 	 * @return the connections of this output node.
 	 */
-	public List<NodeConnection<?, T>> getConnections() {
+	public List<NodeConnection<?, ?>> getConnections() {
 		return connections;
 	}
 	

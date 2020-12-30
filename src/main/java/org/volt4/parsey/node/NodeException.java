@@ -13,6 +13,10 @@ public class NodeException extends Exception {
 	 */
 	private static final long serialVersionUID = 5348179140485417590L;
 
+	/**
+	 * Creates the Exception and throws it.
+	 * @param errorMessage Message thrown.
+	 */
 	public NodeException(String errorMessage) {
 		super(errorMessage);
 	}

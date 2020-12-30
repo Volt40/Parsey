@@ -65,6 +65,7 @@ public class Parsey extends Application {
 
         root.getChildren().add(curve);
         root.getChildren().add(nc);
+        root.getChildren().add(fxNode);
 
         scene = new Scene(root);
         //scene.getStylesheets().add("/stylesheets/workspace.css");

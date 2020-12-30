@@ -281,7 +281,7 @@ public class NodeValueSlider extends AnchorPane implements InputNodeComponent<Do
      * @param input Input connection to be set.
      */
     @Override
-    public void setInput(NodeConnectionComponent<Double, ?> input) {
+    public void setInput(NodeConnectionComponent<?, ?> input) {
         this.input.setConnection(input.getNodeConnection());
     }
 

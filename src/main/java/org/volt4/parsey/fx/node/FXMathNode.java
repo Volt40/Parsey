@@ -39,7 +39,7 @@ public class FXMathNode extends FXNode {
         addInputIOComponent(value1 = new ValueSlider(IOComponent.Type.INPUT, "Value"), "value1", 3);
         addInputIOComponent(value2 = new ValueSlider(IOComponent.Type.INPUT, "Value"), "value2", 3);
         addInputIOComponent(base = new ValueSlider(IOComponent.Type.INPUT, "Base"), "base", 3);
-        addInputIOComponent(exponent = new ValueSlider(IOComponent.Type.INPUT, "Exponent"), "exponent", 3);
+        addInputIOComponent(exponent = new ValueSlider(IOComponent.Type.INPUT, "Exponent"), "exponent", 0);
         dd.getEmbedded().valueProperty().addListener((un, oldValue, newValue) -> {
             for (MathNode.Type mt : MathNode.Type.values())
                 if (mt.getDisplayName().equals(newValue)) {
