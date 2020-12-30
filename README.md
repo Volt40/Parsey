@@ -1,2 +1,2 @@
 # Parsey
-Node-based file parser. Currenty a WIP, stay tuned.
+Node-based workspace. Currenty a WIP, stay tuned.
