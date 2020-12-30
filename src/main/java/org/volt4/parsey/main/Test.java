@@ -1,5 +1,9 @@
 package org.volt4.parsey.main;
 
+import javafx.geometry.Bounds;
+import javafx.geometry.Point2D;
+import javafx.geometry.Point3D;
+import javafx.geometry.Rectangle2D;
 import org.volt4.parsey.node.*;
 import org.volt4.parsey.node.implementation.MathNode;
 

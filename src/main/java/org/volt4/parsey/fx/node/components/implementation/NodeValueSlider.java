@@ -2,18 +2,15 @@ package org.volt4.parsey.fx.node.components.implementation;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
-import org.volt4.parsey.fx.node.FXNode;
+import org.volt4.parsey.fx.node.FXNodeBase;
+import org.volt4.parsey.fx.node.components.ConnectionHandle;
 import org.volt4.parsey.fx.node.components.InputNodeComponent;
-import org.volt4.parsey.fx.node.components.NodeConnectionComponent;
 import org.volt4.parsey.node.NodeInput;
 
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -29,16 +26,10 @@ import java.math.RoundingMode;
  * @version 1.0
  *
  */
-public class NodeValueSlider extends AnchorPane implements InputNodeComponent<Double> {
+public class NodeValueSlider extends InputNodeComponent<Double> {
 
     // Location of this component's FXML.
     private static final String FXML_RESOURCE_LOCATION = "/fxml/nodes/components/ValueSlider.fxml";
-
-    // True if this component is disabled.
-    private boolean disabled;
-
-    // This component's buffer.
-    private double buffer;
 
     // Settings.
     private double STARTING_VALUE;
@@ -96,24 +87,15 @@ public class NodeValueSlider extends AnchorPane implements InputNodeComponent<Do
      * @param scrollScale Scale for the scroll increment.
      */
     public NodeValueSlider(NodeInput<Double> input, String label, double buffer, double startingValue, double arrowIncrement, double scrollScale) {
+        super(FXML_RESOURCE_LOCATION, 30, buffer, input, true, ConnectionHandle.HandleColor.GREY);
         STARTING_VALUE = startingValue;
         INCREMENT_ARROWS = arrowIncrement;
         SCROLL_SCALE = scrollScale;
         this.input = input;
         this.label = label;
         this.buffer = buffer;
-        // Set up the loader.
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(FXML_RESOURCE_LOCATION));
-        loader.setRoot(this);
-        loader.setController(this);
-        // Load.
-        try {
-            loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         // Set up.
-        FXNode.consumeDrag(this);
+        FXNodeBase.consumeDrag(this);
         labelText.setText(label);
         rightPane.setVisible(false);
         leftPane.setVisible(false);
@@ -244,99 +226,12 @@ public class NodeValueSlider extends AnchorPane implements InputNodeComponent<Do
     }
 
     /**
-     * Returns the NodeInput object that this component controls.
-     *
-     * @return the NodeInput object that this component controls.
+     * Gets a result.
+     * @return a result
      */
     @Override
-    public NodeInput<Double> getNodeInput() {
-        return input;
-    }
-
-    /**
-     * Returns true if this component is able to supply an input.
-     *
-     * @return True if this component can supply a value, false
-     * otherwise.
-     */
-    @Override
-    public boolean canSupply() {
-        return true;
-    }
-
-    /**
-     * Supplies the value, or null if it can't (use canSupply() to
-     * see if this can supply a value).
-     *
-     * @return The supplied value.
-     */
-    @Override
-    public Double supply() {
+    public Double get() {
         return getValue();
     }
 
-    /**
-     * Sets the input connection of this component. Used for reference.
-     *
-     * @param input Input connection to be set.
-     */
-    @Override
-    public void setInput(NodeConnectionComponent<?, ?> input) {
-        this.input.setConnection(input.getNodeConnection());
-    }
-
-    /**
-     * Returns the height of this component.
-     *
-     * @return the height of this component.
-     */
-    @Override
-    public double getComponentHeight() {
-        return getPrefHeight(); // Might change later
-    }
-
-    /**
-     * Returns the buffer of this component. The buffer
-     * is the distance <I>above</I> the component.
-     *
-     * @return
-     */
-    @Override
-    public double getBuffer() {
-        return buffer;
-    }
-
-    /**
-     * Returns the root of this component.
-     *
-     * @return the root of this component.
-     */
-    @Override
-    public Pane getRoot() {
-        return this;
-    }
-
-    /**
-     * Sets whether or not this component is disabled.
-     *
-     * @return whether or not this component is disabled.
-     */
-    @Override
-    public boolean isComponentDisabled() {
-        return disabled;
-    }
-
-    /**
-     * Sets the component to be disabled. Disabled components should be invisible.
-     *
-     * @param disabled true if this component is disabled, false otherwise.
-     */
-    @Override
-    public void setComponentDisabled(boolean disabled) {
-        if (disabled)
-            setVisible(false);
-        else
-            setVisible(true);
-        this.disabled = disabled;
-    }
 }

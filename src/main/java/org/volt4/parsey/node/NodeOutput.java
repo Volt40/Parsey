@@ -74,7 +74,7 @@ public class NodeOutput<T> {
 	 * Adds a connection.
 	 * @param connection Connection to be added.
 	 */
-	public void addConnection(NodeConnection<?, T> connection) {
+	public void addConnection(NodeConnection<?, ?> connection) {
 		connection.setOutput(this);
 		connections.add(connection);
 		connected = true;
@@ -84,7 +84,7 @@ public class NodeOutput<T> {
 	 * Removes the connection.
 	 * @param connection Connection to be removed.
 	 */
-	public void removeConnection(NodeConnection<?, T> connection) {
+	public void removeConnection(NodeConnection<?, ?> connection) {
 		while(connections.remove(connection));
 		if (connections.size() == 0) // Check to see if unconnected.
 			connected = false;

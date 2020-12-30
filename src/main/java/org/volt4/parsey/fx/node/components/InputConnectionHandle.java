@@ -78,14 +78,14 @@ public class InputConnectionHandle<T> extends ConnectionHandle {
         for (OutputConnectionHandle och : OutputConnectionHandle.getAllOutputConnectionHandles()) {
             double tX = och.getLayoutX();
             double tY = och.getLayoutY();
-            if (dropX < tX + och.getPrefWidth() && dropX > tX)
-                if (dropY < tY + och.getPrefHeight() && dropY > tY) {
+            if (dropX < tX + och.getPrefWidth() && dropX > tX) // Check X
+                if (dropY < tY + och.getPrefHeight() && dropY > tY) { // Check Y
                     activeConnection.setCurveStartPoint(tX + och.getPrefWidth() / 2, tY + och.getPrefHeight() / 2);
                     linkedNodeComponent.setInput(activeConnection);
                     referencedConnection = activeConnection;
-                    activeConnection = null;
                 }
         }
+        activeConnection = null;
     }
 
 }

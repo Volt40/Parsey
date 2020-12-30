@@ -30,16 +30,16 @@ public class NodeConnection<I, O> {
 	 * Sets the linked NodeOutput.
 	 * @param output NodeOutput to be linked. Must be of type O.
 	 */
-	public void setOutput(NodeOutput<O> output) {
-		this.output = output;
+	public void setOutput(NodeOutput<?> output) {
+		this.output = (NodeOutput<O>) output;
 	}
 	
 	/**
 	 * Sets the linked NodeInput.
 	 * @param input NodeInput to be linked. Must be of type I.
 	 */
-	public void setInput(NodeInput<I> input) {
-		this.input = input;
+	public void setInput(NodeInput<?> input) {
+		this.input = (NodeInput<I>) input;
 	}
 	
 	/**

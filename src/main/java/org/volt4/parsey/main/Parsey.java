@@ -12,6 +12,7 @@ import org.volt4.parsey.fx.node.FXNode;
 import org.volt4.parsey.fx.node.components.implementation.DropDown;
 import org.volt4.parsey.fx.node.components.IOComponent;
 import org.volt4.parsey.fx.node.components.implementation.IOLabel;
+import org.volt4.parsey.fx.node.components.implementation.NodeValueSlider;
 import org.volt4.parsey.fx.node.components.implementation.ValueSlider;
 import org.volt4.parsey.node.implementation.MathNode;
 
@@ -36,6 +37,7 @@ public class Parsey extends Application {
         DropDown dropDown = new DropDown("Choice 1", "Choice 2", "Choice 3");
         IOLabel ioLabel = new IOLabel("Value", IOLabel.Type.OUTPUT, 30);
         FXNode fxNode = new FXMathNode(MathNode.Type.LOGARITHM);
+        NodeValueSlider nslider = new NodeValueSlider(null, "Value", 0);
 
         AnchorPane nc = new AnchorPane();
         nc.setPrefSize(10, 10);
@@ -66,6 +68,7 @@ public class Parsey extends Application {
         root.getChildren().add(curve);
         root.getChildren().add(nc);
         root.getChildren().add(fxNode);
+        root.getChildren().add(nslider);
 
         scene = new Scene(root);
         //scene.getStylesheets().add("/stylesheets/workspace.css");

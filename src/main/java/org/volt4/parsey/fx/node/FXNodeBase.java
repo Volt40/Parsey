@@ -89,4 +89,12 @@ public abstract class FXNodeBase extends AnchorPane {
         });
     }
 
+    /**
+     * Prevents dragging on-top of the given pane.
+     * @param pane Pane to disable dragging.
+     */
+    public static void consumeDrag(Pane pane) {
+        pane.setOnMouseDragged(mouseEvent -> mouseEvent.consume());
+    }
+
 }
