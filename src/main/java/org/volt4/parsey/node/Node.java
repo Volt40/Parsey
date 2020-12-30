@@ -71,7 +71,7 @@ public abstract class Node {
 		if (!recalculate && inputs.size() > 0)
 			return false; // Escape if a recalculation is not needed.
 		// Check to see if all connected inputs are available, and build the list.
-		List<Object> in = new ArrayList<Object>();
+		List<Object> in = new ArrayList<>();
 		for (NodeInput<?> input : inputs)
 			if (input.isConnected() && input.hasValue() && !input.isDisabled())
 				in.add(input.getValue());

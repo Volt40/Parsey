@@ -1,12 +1,12 @@
 package org.volt4.parsey.fx.node;
 
-import javafx.scene.control.ComboBox;
-import org.volt4.parsey.fx.node.components.implementation.DropDown;
 import org.volt4.parsey.fx.node.components.IOComponent;
+import org.volt4.parsey.fx.node.components.implementation.DropDown;
 import org.volt4.parsey.fx.node.components.implementation.OutputLabel;
 import org.volt4.parsey.fx.node.components.implementation.ValueSlider;
 import org.volt4.parsey.node.implementation.MathNode;
 
+@Deprecated
 public class FXMathNode extends FXNode {
 
     private MathNode node;
